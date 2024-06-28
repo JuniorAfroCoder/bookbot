@@ -1,1 +1,1 @@
-Bookbot is my first project 
+A simple program to read text files into the command-line
