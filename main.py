@@ -2,11 +2,12 @@
 def main(book_path):
     txt= file_opening(book_path)
     words= splitter(txt)
-    print("The book contains "+ str(len(words)))
+    # print("The book contains "+ str(len(words)))
     characters= word_splitter(words)
     characters_nums= character_counting(characters)
-    print("\n Occurences of different letters \n")
-    print(characters_nums)
+    # print("\n Occurences of different letters \n")
+    # print(characters_nums)
+    report(book_path, len(words), characters_nums)
     
 
 
@@ -52,6 +53,13 @@ def character_counting(characters):
     sorted_dict= {i:character_dict[i] for i in dict_keys}
     return sorted_dict
 
+
+def report(book,words_number, characters_dict):
+    print(f'--- Begin report of {book} --- \n')
+    print(f'{words_number} words found in the document \n \n')
+    for x in characters_dict:
+            print(f'The \'{x}\' character was found {characters_dict[x]} times \n')
+    print('--- End of the report ---')
         
 main("books/frankenstein.txt")
 
